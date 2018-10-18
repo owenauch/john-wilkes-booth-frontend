@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.codename-input {
+  margin: 30px;
+  width: 30%;
+}
+
+.App-header {
+  margin: 0 auto;
+  width: 70%;
+  alignItems: 'center';
+  textAlign: 'center';
+  padding: 50px;
+}
+
+.logo {
+  height: 300px;
+}
+
+.Main {
+  backgroundColor: "blue";
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.spacer {
+  height: 100px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
