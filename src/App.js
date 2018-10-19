@@ -45,28 +45,31 @@ class App extends Component {
               alt="Logo"
               src={logo}
               className="logo"
+              style={{maxWidth: "70%", height: "auto"}}
             />
-            <Typography component="h1" variant="h3" style={{color: "#D00000", marginBottom: "20px", marginTop: "-10px"}}>
+            <Typography component="h1" variant="h3" style={{color: "#D00000", marginBottom: ".8em", marginTop: "-.8em", fontSize: "2.5em"}}>
               Do you thirst for blood?
             </Typography>
-            <Typography component="h1" variant="h4">
+            <Typography component="h1" variant="h4" style={{fontSize: "2em"}}>
               Enter a codename below to find your target:
             </Typography>
-            <Input className="codename-input" value={this.state.name} onChange={this.handleChange} placeholder="Codename" style={{fontSize: "20pt"}}/>
-            <Button onClick={this.handleButtonClick} style={{backgroundColor: "black", color: "white", fontSize: "15pt"}}>
+            <Input className="codename-input" value={this.state.name} onChange={this.handleChange} placeholder="Codename" style={{fontSize: "2em", width: "70%"}}/>
+            <Button onClick={this.handleButtonClick} style={{backgroundColor: "black", color: "white", fontSize: "1.1em"}}>
               Show me who to kill
             </Button>
-            {this.state.targetInfo && <Paper className="targetInfoCard" style={{backgroundColor: "black", color: "white", padding: "50px"}}>
-              <Typography component="h1" variant="h4" style={{color: "white"}}>
+            {this.state.targetInfo && <Paper className="targetInfoCard"
+              style={{backgroundColor: "black", color: "white", padding: "1.5em", marginTop: "1em"}}
+            >
+              <Typography component="h1" variant="h4" style={{color: "white", fontSize: "2.5em"}}>
                 {this.state.targetInfo.target}
               </Typography>
-              <Typography component="h1" variant="h5" style={{color: "white", margin: "10px"}}>
+              <Typography component="h1" variant="h5" style={{color: "white", margin: ".4em", fontSize: "1.5em"}}>
                 Codename: {this.state.targetInfo.code}
               </Typography>
                 <img
                   alt="Target Image"
                   src={this.state.targetInfo.target_pic}
-                  style={{maxHeight: "500px"}}
+                  style={{maxWidth: "85%", height: "auto"}}
                 />
             </Paper>}
           </div>
