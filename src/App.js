@@ -29,7 +29,7 @@ class App extends Component {
       console.log(error)
       this.setState({ targetInfo: {
         target: "Error: our website is busy teaching robots how to love.",
-        code: "N/A",
+        catchphrase: "N/A",
         target_pic: "https://media.giphy.com/media/3kFkjoddRSOMXVxAHI/giphy.gif"
       }})
     })
@@ -48,7 +48,7 @@ class App extends Component {
               style={{maxWidth: "70%", height: "auto"}}
             />
             <Typography component="h1" variant="h3" style={{color: "#D00000", marginBottom: ".8em", marginTop: "-.8em", fontSize: "2.5em"}}>
-              Do you thirst for blood?
+              Do you thirst for blood (or friendship)?
             </Typography>
             <Typography component="h1" variant="h4" style={{fontSize: "2em"}}>
               Enter a codename below to find your target:
@@ -61,13 +61,13 @@ class App extends Component {
               style={{backgroundColor: "black", color: "white", padding: "1.5em", marginTop: "1em"}}
             >
               <Typography component="h1" variant="h4" style={{color: "white", fontSize: "2.5em"}}>
-                {this.state.targetInfo.target}
+                Target: <strong style={{color: "#D00000"}}>{this.state.targetInfo.target}</strong>
               </Typography>
               <Typography component="h1" variant="h5" style={{color: "white", margin: ".4em", fontSize: "1.5em"}}>
-                Codename: {this.state.targetInfo.code}
+                Catchphrase: <strong style={{color: "#D00000"}}>"{this.state.targetInfo.catchphrase}"</strong>
               </Typography>
                 <img
-                  alt="Target Image"
+                  alt="Target"
                   src={this.state.targetInfo.target_pic}
                   style={{maxWidth: "85%", height: "auto"}}
                 />
