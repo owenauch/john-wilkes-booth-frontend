@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 
+import Countdown from "./Countdown"
+
 class App extends Component {
   state = {
     name: '',
@@ -19,7 +21,7 @@ class App extends Component {
   };
 
   handleButtonClick = event => {
-    const url = "https://still-oasis-87334.herokuapp.com/" + this.state.name
+    const url = "https://api-dot-overflow-assassins.appspot.com/" + this.state.name
     axios.get(url, {crossdomain: true})
     .then((response) => {
       console.log(response)
@@ -30,7 +32,8 @@ class App extends Component {
       this.setState({ targetInfo: {
         target: "Error: our website is busy teaching robots how to love.",
         catchphrase: "N/A",
-        target_pic: "https://media.giphy.com/media/3kFkjoddRSOMXVxAHI/giphy.gif"
+        target_pic: "https://media.giphy.com/media/3kFkjoddRSOMXVxAHI/giphy.gif",
+        inactive_limit: null
       }})
     })
   };
@@ -66,12 +69,18 @@ class App extends Component {
               <Typography component="h1" variant="h5" style={{color: "white", margin: ".4em", fontSize: "1.5em"}}>
                 Catchphrase: <strong style={{color: "#D00000"}}>"{this.state.targetInfo.catchphrase}"</strong>
               </Typography>
+              {this.state.targetInfo.inactive_limit && <Typography component="h1" variant="h5" style={{color: "white", margin: ".5em", fontSize: "1.5em"}}>
+                Time Remaining in Round: <strong style={{color: "#D00000"}}><Countdown date={this.state.targetInfo.inactive_limit} /></strong>
+              </Typography>}
                 <img
                   alt="Target"
                   src={this.state.targetInfo.target_pic}
                   style={{maxWidth: "85%", height: "auto"}}
                 />
             </Paper>}
+            <Typography component="p" style={{color: "#003366", fontSize: "1em", marginTop: ".4em"}}>
+              This app brought to you by The Unit 👀
+            </Typography>
           </div>
         </Paper>
       </div>
