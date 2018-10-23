@@ -79,7 +79,7 @@ class App extends Component {
                 />
             </Paper>}
             <Typography component="p" style={{color: "#003366", fontSize: "1em", marginTop: ".4em"}}>
-              This app brought to you by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style={{textDecoration: "none", color: "#003366"}}>The Unit 👀</a>
+              This app brought to you by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style={{textDecoration: "none", color: "#003366"}}>The Unit <span role="img" aria-label="eyes">👀</span></a>
             </Typography>
           </div>
         </Paper>
