@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="Main" style={{backgroundColor: "black", height: "2000px"}}>
+      <div className="Main" style={{backgroundColor: "black", height: "110%", minHeight: "110%"}}>
         <div className="spacer" />
         <Paper className="App-header" style={{backgroundColor: "#B8B8B8"}}>
           <div className="App">
@@ -50,7 +50,7 @@ class App extends Component {
               className="logo"
               style={{maxWidth: "70%", height: "auto"}}
             />
-            <Typography component="h1" variant="h3" style={{color: "#D00000", marginBottom: ".8em", marginTop: "-.8em", fontSize: "2.5em"}}>
+            <Typography component="h1" variant="h3" style={{color: "#cc0000", marginBottom: ".8em", marginTop: "-.8em", fontSize: "2.5em"}}>
               Do you thirst for blood (or friendship)?
             </Typography>
             <Typography component="h1" variant="h4" style={{fontSize: "2em"}}>
@@ -60,17 +60,23 @@ class App extends Component {
             <Button onClick={this.handleButtonClick} style={{backgroundColor: "black", color: "white", fontSize: "1.1em"}}>
               Show me who to kill
             </Button>
+            <Typography component="p" style={{color: "#003366", fontSize: "1.8em", marginTop: ".4em"}}>
+              <a href="https://docs.google.com/document/d/1vGcrz1D3qGNdcXiEm3CwX27Xg16qfwx9V2FhBx-dIoU" style={{color: "#cc0000"}}>Click here for rules document <span role="img" aria-label="page with curl">📃</span></a>
+            </Typography>
+            <Typography component="p" style={{color: "#003366", fontSize: "1.8em", marginTop: ".4em"}}>
+              <a href="https://docs.google.com/spreadsheets/d/1EoWj-CH21XUI3TzCnrPzJlQW4gzCst89yhj4eNwR4hM" style={{color: "#cc0000"}}>Click here for info on other players <span role="img" aria-label="detective">🕵️</span></a>
+            </Typography>
             {this.state.targetInfo && <Paper className="targetInfoCard"
               style={{backgroundColor: "black", color: "white", padding: "1.5em", marginTop: "1em"}}
             >
               <Typography component="h1" variant="h4" style={{color: "white", fontSize: "2.5em"}}>
-                Target: <strong style={{color: "#D00000"}}>{this.state.targetInfo.target}</strong>
+                Target: <strong style={{color: "#cc0000"}}>{this.state.targetInfo.target}</strong>
               </Typography>
               <Typography component="h1" variant="h5" style={{color: "white", margin: ".4em", fontSize: "1.5em"}}>
-                Catchphrase: <strong style={{color: "#D00000"}}>"{this.state.targetInfo.catchphrase}"</strong>
+                Catchphrase: <strong style={{color: "#cc0000"}}>"{this.state.targetInfo.catchphrase}"</strong>
               </Typography>
               {this.state.targetInfo.inactive_limit && <Typography component="h1" variant="h5" style={{color: "white", margin: ".5em", fontSize: "1.5em"}}>
-                Time Remaining in Round: <strong style={{color: "#D00000"}}><Countdown date={this.state.targetInfo.inactive_limit} /></strong>
+                Time Remaining in Round: <strong style={{color: "#cc0000"}}><Countdown date={this.state.targetInfo.inactive_limit} /></strong>
               </Typography>}
                 <img
                   alt="Target"
@@ -78,11 +84,12 @@ class App extends Component {
                   style={{maxWidth: "85%", height: "auto"}}
                 />
             </Paper>}
-            <Typography component="p" style={{color: "#003366", fontSize: "1em", marginTop: ".4em"}}>
-              This app brought to you by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style={{textDecoration: "none", color: "#003366"}}>The Unit <span role="img" aria-label="eyes">👀</span></a>
+            <Typography component="p" style={{color: "#003366", fontSize: "1em", marginTop: "1.6em"}}>
+              This app brought to you by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style={{textDecoration: "none", color: "#003366"}}>Absolute Unit Labs <span role="img" aria-label="eyes">👀</span></a>
             </Typography>
           </div>
         </Paper>
+        <div className="spacer" />
       </div>
     );
   }
