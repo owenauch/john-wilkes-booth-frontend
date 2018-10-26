@@ -54,7 +54,7 @@ class App extends Component {
               Do you thirst for blood (or friendship)?
             </Typography>
             <Typography component="h1" variant="h4" style={{fontSize: "2em"}}>
-              Enter a codename below to find your target:
+              Enter your codename below to find your target:
             </Typography>
             <Input className="codename-input" value={this.state.name} onChange={this.handleChange} placeholder="Codename" style={{fontSize: "2em", width: "70%"}}/>
             <Button onClick={this.handleButtonClick} style={{backgroundColor: "black", color: "white", fontSize: "1.1em"}}>
